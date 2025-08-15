@@ -47,6 +47,41 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  showDialog(context: context, builder: (context){
+                    return const AlertDialog(
+                      title: Text('ログインしました！'),
+                    );
+                  },
+                  );
+                },
+                child: Text('ログインする')),
+            ElevatedButton(
+                onPressed: () {
+                  showDialog(context: context, builder: (context){
+                    return const AlertDialog(
+                      title: Text('新規登録をしました！'),
+                    );
+                  },
+                  );
+                },
+                child: Text('新規登録をする')),
+            TextButton(
+                onPressed: () {
+                  showDialog(context: context, builder: (context){
+                    return const AlertDialog(
+                      title: Text('パスワードを変更しました！'),
+                    );
+                  },
+                  );
+                },
+                child: Text('パスワードを忘れた方はこちら'))
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
