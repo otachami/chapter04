@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  showDialog(context: context, builder: (context){
+                  showDialog(context: context, builder: (context) {
                     return const AlertDialog(
                       title: Text('ログインしました！'),
                     );
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('ログインする')),
             ElevatedButton(
                 onPressed: () {
-                  showDialog(context: context, builder: (context){
+                  showDialog(context: context, builder: (context) {
                     return const AlertDialog(
                       title: Text('新規登録をしました！'),
                     );
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('新規登録をする')),
             TextButton(
                 onPressed: () {
-                  showDialog(context: context, builder: (context){
+                  showDialog(context: context, builder: (context) {
                     return const AlertDialog(
                       title: Text('パスワードを変更しました！'),
                     );
