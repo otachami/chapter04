@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +21,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
 
   final String title;
 
@@ -46,48 +44,31 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-                onPressed: () {
-                  showDialog(context: context, builder: (context) {
-                    return const AlertDialog(
-                      title: Text('ログインしました！'),
-                    );
-                  },
-                  );
-                },
-                child: Text('ログインする')),
-            ElevatedButton(
-                onPressed: () {
-                  showDialog(context: context, builder: (context) {
-                    return const AlertDialog(
-                      title: Text('新規登録をしました！'),
-                    );
-                  },
-                  );
-                },
-                child: Text('新規登録をする')),
-            TextButton(
-                onPressed: () {
-                  showDialog(context: context, builder: (context) {
-                    return const AlertDialog(
-                      title: Text('パスワードを変更しました！'),
-                    );
-                  },
-                  );
-                },
-                child: Text('パスワードを忘れた方はこちら'))
-          ],
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('山田太郎'),
+            subtitle: Text('070-1234-567'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('鈴木一郎'),
+            subtitle: Text('080-1234-567'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('佐藤花子'),
+            subtitle: Text('070-7234-567'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {},
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
